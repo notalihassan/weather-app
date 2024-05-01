@@ -4,6 +4,7 @@ import { CiSearch } from 'react-icons/ci'
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { FaLocationDot } from "react-icons/fa6";
+import moment from 'moment/moment';
 
 
 const Weather = () => {
@@ -37,37 +38,15 @@ const Weather = () => {
 
   return (
    <>
-   
-    {/* <div className='container'>
-      <div className='city'>
-        <input type='text' value={city} onChange={handleOnChange} placeholder='Enter any ity name'></input>
-        <button onClick={() => fetchData() }>
-        <CiSearch />
-        </button>
-      </div>
-      {
-        error && <p className='error-message'>{error}</p>
-      }
-
-      {
-        weather && weather.weather && 
-        <div className='content'>
-          <div className='weather-image'>
-            <img src='https://openweathermap.org/img/wn/10d@2x.png'></img>
-          </div>
-
-        </div>
-      }
-    </div> */}
 
     <div className='container'>
-      <h1 className='text-center pt-3 '>Weather Application</h1>
-    <div className="container-fluid px-1 px-sm-3 py-4 mx-auto">
-    <div className="row d-flex justify-content-center">
+      <h1 className='text-center pt-5 pb-3 text-white'>Weather Application</h1>
+    <div className="container-fluid px-1 px-sm-3 mx-auto">
+    <div className="row d-flex justify-content-center text-warning">
         <div className="row card0">
             <div className="card1 col-lg-8 col-md-7">
                 {/* <small>the.weather</small> */}
-                <div className="text-center">
+                <div className="">
                     {/* <img className="image mt-5" src="https://i.imgur.com/M8VyA2h.png" /> */}
                     {
                        weather && weather.weather && 
@@ -98,7 +77,7 @@ const Weather = () => {
                           }
                         </span>
                         </h2>
-                        {/* <small>10:36 - Tuesday, 22 Oct '19</small> */}
+                        <small>{moment().format('MMMM Do YYYY, h:mm:ss a')}</small>
                     </div>
                     {/* <div className="d-flex flex-column text-center">
                         <h3 className="fa fa-sun-o mt-5"></h3>
@@ -108,7 +87,7 @@ const Weather = () => {
             </div>
             <div className="card2 col-lg-4 col-md-5">
                 <div className="row px-3">
-                <input type='text' value={city} onChange={handleOnChange} placeholder='Enter any city name'></input>
+                <input type='text' className='text-center' value={city} onChange={handleOnChange} placeholder='Enter any city name'></input>
                     <button className='btn btn-warning mt-3 mb-2' onClick={() => fetchData() }>
                        Search <CiSearch />
                     </button>
@@ -118,7 +97,7 @@ const Weather = () => {
 
                     <div className="line my-3"></div>
                     
-                    <p className='text-white'>Weather Details</p>
+                    <h5 className='text-white'>Weather Details</h5>
                     <div className="row px-3">
                         <p className="light-text">Atmosphere</p>
                         <p className="ml-auto">
@@ -155,7 +134,7 @@ const Weather = () => {
     </div>
 </div>
     </div>
-    <footer className='text-center mt-4 mb-3'>
+    <footer className='text-center mt-4 mb-3 text-white'>
       <h6>Developed and designed by Ali Hassan</h6>
     </footer>
    </>
