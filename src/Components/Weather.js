@@ -118,7 +118,7 @@ const Weather = () => {
 
                     <div className="line my-3"></div>
                     
-                    <p>Weather Details</p>
+                    <p className='text-white'>Weather Details</p>
                     <div className="row px-3">
                         <p className="light-text">Atmosphere</p>
                         <p className="ml-auto">
@@ -135,7 +135,7 @@ const Weather = () => {
                         {
                             weather && weather.weather && 
                             weather.main.humidity
-                        } span
+                        } <span>%</span>
                         </p>
                     </div>
                     <div className="row px-3">
@@ -155,8 +155,8 @@ const Weather = () => {
     </div>
 </div>
     </div>
-    <footer className='text-center mt-3 mb-3'>
-      <h5>Developed an designed by Ali Hassan</h5>
+    <footer className='text-center mt-4 mb-3'>
+      <h6>Developed and designed by Ali Hassan</h6>
     </footer>
    </>
   )
